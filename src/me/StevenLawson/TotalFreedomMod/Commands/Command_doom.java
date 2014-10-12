@@ -14,7 +14,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.ONLY_CONSOLE)
-@CommandParameters(description = "For the bad Superadmins", usage = "/<command> <playername>")
+@CommandParameters(description = "For SuperAdmins that break rules.", usage = "/<command> <playername>")
 public class Command_doom extends TFM_Command
 {
     @Override
@@ -34,6 +34,7 @@ public class Command_doom extends TFM_Command
         }
 
         TFM_Util.adminAction(sender.getName(), "Casting oblivion over " + player.getName(), true);
+        TFM_Util.adminAction(sender.getName(), " is gonna show " + player.getName() + " the thunder! - MAKE IT RAIN!", ChatColor.RED);
         TFM_Util.bcastMsg(player.getName() + " will be completely obliviated!", ChatColor.RED);
 
         final String ip = player.getAddress().getAddress().getHostAddress().trim();
@@ -101,7 +102,7 @@ public class Command_doom extends TFM_Command
                 player.getWorld().createExplosion(player.getLocation(), 4F);
 
                 // kick player
-                player.kickPlayer(ChatColor.RED + "FUCKOFF, and get your shit together!");
+                player.kickPlayer(ChatColor.RED + "Say Bye Bye to your rank! Get your act together, and stay off! Your banned for 24 hours!");
             }
         }.runTaskLater(plugin, 3L * 20L);
 
