@@ -47,7 +47,7 @@ public class TFM_Heartbeat extends BukkitRunnable
                 final long lastActivity = TFM_EssentialsBridge.getLastActivity(player.getName());
                 if (lastActivity > 0 && lastActivity + AUTO_KICK_TIME < System.currentTimeMillis())
                 {
-                    player.kickPlayer("Please be more active, you've been kicked by server for being afk to long.");
+                    player.kickPlayer("Automatically kicked by server for inactivity.");
                 }
             }
         }

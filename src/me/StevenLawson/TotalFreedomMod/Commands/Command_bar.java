@@ -27,7 +27,7 @@ public class Command_bar extends TFM_Command
     {
         if (!TFM_Util.DEVELOPERS.contains(sender.getName()))
         {
-            playerMsg(TotalFreedomMod.MSG_NO_PERMS);
+            playerMsg(TFM_Command.MSG_NO_PERMS);
             return true;
         }
         if (!server.getPluginManager().isPluginEnabled("BarAPI"))

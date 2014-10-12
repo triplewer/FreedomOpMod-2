@@ -39,7 +39,7 @@ public class Command_destroy extends TFM_Command{
 	        // Undo WorldEdits:
 	        try
 	        {
-	            TFM_WorldEditBridge.getInstance().undo(player, 15);
+	            TFM_WorldEditBridge.undo(player, 15);
 	        }
 	        catch (NoClassDefFoundError ex)
 	        {

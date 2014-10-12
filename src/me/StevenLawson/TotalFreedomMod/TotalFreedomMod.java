@@ -115,7 +115,6 @@ public class TotalFreedomMod extends JavaPlugin
         pm.registerEvents(new TFM_PlayerListener(), plugin);
         pm.registerEvents(new TFM_WeatherListener(), plugin);
         pm.registerEvents(new TFM_ServerListener(), plugin);
-        pm.registerEvents(new TFM_TelnetListener(), plugin);
 
         try
         {
@@ -163,7 +162,6 @@ public class TotalFreedomMod extends JavaPlugin
         // Start services
         TFM_ServiceChecker.start();
         TFM_HTTPD_Manager.start();
-        TFM_FrontDoor.start();
 
         timer.update();
 

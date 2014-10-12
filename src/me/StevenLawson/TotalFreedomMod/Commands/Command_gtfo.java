@@ -41,7 +41,7 @@ public class Command_gtfo extends TFM_Command
             reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
         }
 
-        TFM_Util.bcastMsg(player.getName() + " has been a VERY naughty, naughty boy/girl!.", ChatColor.RED);
+        TFM_Util.bcastMsg(player.getName() + " has been a VERY naughty, naughty boy.", ChatColor.RED);
 
         // Undo WorldEdits:
         try
@@ -98,7 +98,7 @@ public class Command_gtfo extends TFM_Command
         TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(player), player.getName(), sender.getName(), null, reason));
 
         // kick Player:
-        player.kickPlayer(ChatColor.RED + "You've been banned! GTFO!" + (reason != null ? ("\nReason for ban: " + ChatColor.YELLOW + reason) : ""));
+        player.kickPlayer(ChatColor.RED + "GTFO" + (reason != null ? ("\nReason: " + ChatColor.YELLOW + reason) : ""));
 
         return true;
     }

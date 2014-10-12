@@ -25,7 +25,7 @@ public class Command_gold extends TFM_Command{
 
 	        if (player == null)
 	        {
-	            playerMsg(TotalFreedomMod.PLAYER_NOT_FOUND, ChatColor.RED);
+	            playerMsg(TFM_Command.PLAYER_NOT_FOUND, ChatColor.RED);
 	            return true;
 	        }
         TFM_Util.bcastMsg(player.getName() + " Is a sky fan -_-", ChatColor.RED);

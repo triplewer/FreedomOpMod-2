@@ -35,6 +35,7 @@ public class Command_fopm extends TFM_Command
         playerMsg("Running on " + TFM_ConfigEntry.SERVER_NAME.getString() + ".", ChatColor.GOLD);
         playerMsg("Created by buildcarter8 & EthanPlayz", ChatColor.GOLD);
 
-        return true;
     }
+		return true;
+}
 }
