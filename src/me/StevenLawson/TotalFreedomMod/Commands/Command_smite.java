@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Someone being a little bitch? Smite them down...", usage = "/<command> [playername]")
+@CommandParameters(description = "'Someone breaking the rules but not much for a ban? Smite them.", usage = "/<command> [playername]")
 public class Command_smite extends TFM_Command
 {
     @Override
@@ -36,7 +36,7 @@ public class Command_smite extends TFM_Command
 
     public static void smite(final Player player)
     {
-        TFM_Util.bcastMsg(player.getName() + " has been a naughty, naughty boy.", ChatColor.RED);
+        TFM_Util.bcastMsg(player.getName() + " has been a naughty, naughty boy/girl, they must be smitten!.", ChatColor.RED);
 
         //Deop
         player.setOp(false);
