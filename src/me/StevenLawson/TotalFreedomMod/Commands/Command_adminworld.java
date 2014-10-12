@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
-@CommandParameters(description = "Go to the AdminWorld.", usage = "/<command> [guest < list | purge | add <player> | remove <player> > | time <morning | noon | evening | night> | weather <off | on | storm>]")
+@CommandParameters(description = "Go to the AdminWorld - Be careful with what you do, we have security!", usage = "/<command> [guest < list | purge | add <player> | remove <player> > | time <morning | noon | evening | night> | weather <off | on | storm>]")
 public class Command_adminworld extends TFM_Command
 {
     private enum CommandMode
@@ -69,19 +69,19 @@ public class Command_adminworld extends TFM_Command
 
                     if (adminWorld == null || sender_p.getWorld() == adminWorld)
                     {
-                        playerMsg("Going to the main world.");
+                        playerMsg("[FOPM Adminworld Security - Access Granted] Whoosh, your going back to the main world!.");
                         sender_p.teleport(server.getWorlds().get(0).getSpawnLocation());
                     }
                     else
                     {
                         if (TFM_AdminWorld.getInstance().canAccessWorld(sender_p))
                         {
-                            playerMsg("Going to the AdminWorld.");
+                            playerMsg("[FOPM Adminworld Security - Access Granted] Whoosh! Your heading to adminworld! - The World Of NO GRIEFING!.");
                             TFM_AdminWorld.getInstance().sendToWorld(sender_p);
                         }
                         else
                         {
-                            playerMsg("You don't have permission to access the AdminWorld.");
+                            playerMsg("[FOPM Adminworld Permissions] Im sorry but you must be a admin to enter ADMINworld.");
                         }
                     }
 
@@ -93,13 +93,13 @@ public class Command_adminworld extends TFM_Command
                     {
                         if ("list".equalsIgnoreCase(args[1]))
                         {
-                            playerMsg("AdminWorld guest list: " + TFM_AdminWorld.getInstance().guestListToString());
+                            playerMsg("[FOPM Adminworld Security] These are the adminworld guests, please keep a eye on them: " + TFM_AdminWorld.getInstance().guestListToString());
                         }
                         else if ("purge".equalsIgnoreCase(args[1]))
                         {
                             assertCommandPerms(sender, sender_p);
                             TFM_AdminWorld.getInstance().purgeGuestList();
-                            TFM_Util.adminAction(sender.getName(), "AdminWorld guest list purged.", false);
+                            TFM_Util.adminAction(sender.getName(), "[FOPM Adminworld Security] Purging the guest list for adminworld!", false);
                         }
                         else
                         {
@@ -122,7 +122,7 @@ public class Command_adminworld extends TFM_Command
 
                             if (TFM_AdminWorld.getInstance().addGuest(player, sender_p))
                             {
-                                TFM_Util.adminAction(sender.getName(), "AdminWorld guest added: " + player.getName(), false);
+                                TFM_Util.adminAction(sender.getName(), "[FOPM Adminworld Security] AdminWorld guest added: " + player.getName(), false);
                             }
                             else
                             {
@@ -134,11 +134,11 @@ public class Command_adminworld extends TFM_Command
                             final Player player = TFM_AdminWorld.getInstance().removeGuest(args[2]);
                             if (player != null)
                             {
-                                TFM_Util.adminAction(sender.getName(), "AdminWorld guest removed: " + player.getName(), false);
+                                TFM_Util.adminAction(sender.getName(), "[FOPM Adminworld Security] AdminWorld guest removed: " + player.getName(), false);
                             }
                             else
                             {
-                                playerMsg("Can't find guest entry for: " + args[2]);
+                                playerMsg("[FOPM Adminworld Security] Can't find guest entry for: " + args[2]);
                             }
                         }
                         else
@@ -159,11 +159,11 @@ public class Command_adminworld extends TFM_Command
                         if (timeOfDay != null)
                         {
                             TFM_AdminWorld.getInstance().setTimeOfDay(timeOfDay);
-                            playerMsg("AdminWorld time set to: " + timeOfDay.name());
+                            playerMsg("[FOPM Adminworld Security] AdminWorld time set to: " + timeOfDay.name());
                         }
                         else
                         {
-                            playerMsg("Invalid time of day. Can be: sunrise, noon, sunset, midnight");
+                            playerMsg("[FOPM Adminworld Security] Invalid time of day. Can be: sunrise, noon, sunset, midnight");
                         }
                     }
                     else
@@ -187,7 +187,7 @@ public class Command_adminworld extends TFM_Command
                         }
                         else
                         {
-                            playerMsg("Invalid weather mode. Can be: off, rain, storm");
+                            playerMsg("[FOPM Adminworld Security] Invalid weather mode. Can be: off, rain, storm");
                         }
                     }
                     else
