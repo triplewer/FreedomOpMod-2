@@ -17,7 +17,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Destroy a faggot", usage = "/<command> <playername>")
+@CommandParameters(description = "Destroy a noob", usage = "/<command> <playername>")
 public class Command_destroy extends TFM_Command{
 
 	@Override
@@ -31,16 +31,10 @@ public class Command_destroy extends TFM_Command{
 
 	        if (player == null)
 	        {
-	            playerMsg(TotalFreedomMod.PLAYER_NOT_FOUND, ChatColor.RED);
+	            playerMsg(TFM_Command.PLAYER_NOT_FOUND, ChatColor.RED);
 	            return true;
 	        }
-	        String reason = null;
-	        if (args.length >= 2)
-	        {
-	            reason = StringUtils.join(ArrayUtils.subarray(args, 1, args.length), " ");
-	        }
-	        sender.sendMessage(ChatColor.RED + "Sending that Mother fucker to hell.");
-	        TFM_Util.bcastMsg(player.getName() + " has been sent to Hell.", ChatColor.RED);
+	        TFM_Util.bcastMsg(sender.getName() + " - Destroying " + player.getName(), ChatColor.RED);
 
 	        // Undo WorldEdits:
 	        try
@@ -52,7 +46,8 @@ public class Command_destroy extends TFM_Command{
 	        }
 
 	        // rollback
-	        TFM_RollbackManager.rollback(player.getName());
+	        sender.sendMessage(ChatColor.RED + "[FOPM]: Rolling back " + player.getName());
+	       TFM_RollbackManager.rollback(player.getName());
 
 	        // deop
 	        player.setOp(false);
@@ -75,13 +70,6 @@ public class Command_destroy extends TFM_Command{
 	        }
 	        //kill them.
 	        player.setHealth(0.0);
-               //welcome xD
-               	player.sendMessage(ChatColor.RED + "Welcome to hell mother fucker");
-               //insult them
-	        player.sendMessage(ChatColor.RED + "You faggot ass bitch go die in a hole");
-	       //send the admin the message
-	       sender.sendMessage(TotalFreedomMod.FREEDOMOP_MOD + ChatColor.WHITE + "The deed has been done.");
-               sender.sendMessage(ChatColor.RED + "Banning is no longer done on here but it undos there edits and rolls them back :P");
 		return true;
 	}
 
