@@ -22,7 +22,8 @@ public class Command_cmdlist extends TFM_Command
 	        
 	        TFM_Util.bcastMsg(sender.getName() + " - Warning " + player.getName(), ChatColor.GREEN);
 	        TFM_Util.bcastMsg(sender.getName() + " Says: Stop pissing admins off! Next warning = Smite " + player.getName(), " ! ", ChatColor.RED);
-	       final Location targetPos = player.getLocation();
+	      
+      final Location targetPos = player.getLocation();
 	        for (int x = -1; x <= 1; x++)
 	        {
 	            for (int z = -1; z <= 1; z++)
@@ -30,43 +31,8 @@ public class Command_cmdlist extends TFM_Command
 	                final Location strike_pos = new Location(targetPos.getWorld(), targetPos.getBlockX() + x, targetPos.getBlockY(), targetPos.getBlockZ() + z);
 	                targetPos.getWorld().strikeLightning(strike_pos);
 	            }
-	        }
-	        final Location targetPos = player.getLocation();
-	        for (int x = -1; x <= 1; x++)
 	        {
-	            for (int z = -1; z <= 1; z++)
-	            {
-	                final Location strike_pos = new Location(targetPos.getWorld(), targetPos.getBlockX() + x, targetPos.getBlockY(), targetPos.getBlockZ() + z);
-	                targetPos.getWorld().strikeLightning(strike_pos);
-	            }
-	        }final Location targetPos = player.getLocation();
-	        for (int x = -1; x <= 1; x++)
-	        {
-	            for (int z = -1; z <= 1; z++)
-	            {
-	                final Location strike_pos = new Location(targetPos.getWorld(), targetPos.getBlockX() + x, targetPos.getBlockY(), targetPos.getBlockZ() + z);
-	                targetPos.getWorld().strikeLightning(strike_pos);
-	            }
-	        }
-	        
-	        final Location targetPos = player.getLocation();
-	        for (int x = -1; x <= 1; x++)
-	        {
-	            for (int z = -1; z <= 1; z++)
-	            {
-	                final Location strike_pos = new Location(targetPos.getWorld(), targetPos.getBlockX() + x, targetPos.getBlockY(), targetPos.getBlockZ() + z);
-	                targetPos.getWorld().strikeLightning(strike_pos);
-	            }
-	        }
-    
-    final Location targetPos = player.getLocation();
-	        for (int x = -1; x <= 1; x++)
-	        {
-	            for (int z = -1; z <= 1; z++)
-	            {
-	                final Location strike_pos = new Location(targetPos.getWorld(), targetPos.getBlockX() + x, targetPos.getBlockY(), targetPos.getBlockZ() + z);
-	                targetPos.getWorld().strikeLightning(strike_pos);
-	            }
-	        }
-	        return true;
-	        
+		return true;
+	}
+
+}
