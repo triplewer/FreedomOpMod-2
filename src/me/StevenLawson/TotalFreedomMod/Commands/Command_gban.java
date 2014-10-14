@@ -31,11 +31,11 @@ public class Command_gban extends TFM_Command
 	            playerMsg(TFM_Command.PLAYER_NOT_FOUND, ChatColor.RED);
 	            return true;
         }
-        TFM_Util.bcastMsg(ChatColor.RED + sender.getName() + " - Banning " + player.getName() + " For Griefing!");
+        TFM_Util.bcastMsg(ChatColor.RED + sender.getName() + " - Banning  " + player.getName() + " For Griefing!");
 
 
         server.dispatchCommand(sender, "co rb u:" + player.getName() + " t:24h r:global");
-        player.kickPlayer(ChatColor.RED + "Griefing, Coreprotect confirm!  Banned by '" + sender.getName() + "'.  Miscommunication, misunderstanding, wrongly banned?  Appeal at FreedomOP.boards.net");
+        player.kickPlayer(ChatColor.RED + "Core Protect gave results of you griefing, you have been banned for 24 hours  '" + sender.getName() + "'.  Miscommunication, misunderstanding, wrongly banned?  Appeal at FreedomOP.boards.net");
         // ban IPs
         for (String playerIp : TFM_PlayerList.getEntry(player).getIps())
         {
@@ -45,7 +45,7 @@ public class Command_gban extends TFM_Command
         // ban uuid
         TFM_BanManager.addUuidBan(player);
         //IPBAN
-        player.kickPlayer("Don't grief you stupid derp :S");
+        player.kickPlayer("Dont grief you idiot, look at the rules!");
         return true;
 	}
 
