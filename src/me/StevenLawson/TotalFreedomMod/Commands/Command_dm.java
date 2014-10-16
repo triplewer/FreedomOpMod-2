@@ -15,7 +15,7 @@ public class Command_dm extends TFM_Command
     {
         
              
-            playerMsg(ChatColor.GREEN + "Confirmed! Please test your commands!");
+            playerMsg(ChatColor.GREEN + "Confirmed! Please test your commands (If its a ban command, test it on yourself)!");
             TFM_Util.bcastMsg("Loading.. Dev Mod Confirmed!", ChatColor.GREEN);
             TFM_Util.bcastMsg("Warning: A Dev turned on DM (DevMode) He is testing a plugin! Expect weird things!", ChatColor.RED);
             return true;
